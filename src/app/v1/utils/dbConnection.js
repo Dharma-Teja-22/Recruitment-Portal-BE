@@ -17,11 +17,12 @@ const poolPromise = (async () => {
     const [rows] = await pool.query(sql);
     if (rows.length > 0) {
       logger.info("Connected to MySQL database successfully!");
+      console.log("DB connected!")
       return pool;
     }
   } catch (err) {
     logger.error("Database Connection Failed! Bad Config: ", err);
-    // throw err;
+    console.log("DB not connected!")
   }
 })();
 
