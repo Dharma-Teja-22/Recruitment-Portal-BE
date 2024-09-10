@@ -67,9 +67,9 @@ class Candidate {
             {
                 return { status : StatusCodes.OK, msg : `Pending`}
             }
-            else if(result[0].status == "Interview" || result[0].status == "In-Progress")
+            else if(result[0].status == "Interview" || result[0].status == "In-Progress" || result[0].status == "Selected")
             {
-                return { status : StatusCodes.OK, msg : `Interview!`}
+                return { status : StatusCodes.OK, msg : result[0].status}
             }
             else
             {
@@ -102,7 +102,7 @@ class Candidate {
             }
             else
             {
-                return { Status : StatusCodes.OK, msg: result[0] }
+                return { Status : StatusCodes.OK, msg: "Not Assigned with Interview Date" }
             }
         } 
         catch (err)     

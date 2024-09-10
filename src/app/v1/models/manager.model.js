@@ -92,7 +92,7 @@ class Manager {
                     Join ${config.TABLENAME5} i ON  i.job_id = j.job_id AND i.candidate_id = c.candidate_id
                     WHERE j.manager_id = ?`
 
-            const [result] = await pool.query(sql, [data]);
+            const [result] = await pool.query(sql, data.manager_id);
             console.log(result)
             if(result.length != null)
             {
