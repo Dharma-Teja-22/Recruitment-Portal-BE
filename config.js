@@ -35,8 +35,10 @@ try {
         TABLENAME3: process.env.TABLENAME3,
         TABLENAME4: process.env.TABLENAME4,
         TABLENAME5: process.env.TABLENAME5,
-        SECRET_KEY: process.env.SECRET_KEY
+        SECRET_KEY: process.env.SECRET_KEY,
+        PORT : process.env.PORT
     };
+    console.log(config)
 } catch (error) {
     console.log(error);
 }
