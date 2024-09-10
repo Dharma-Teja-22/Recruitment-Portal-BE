@@ -11,7 +11,8 @@ const DbConfig = {
 };
 
 const poolPromise = (async () => {
-  try {
+  try 
+  {
     const pool = await mysql.createPool(DbConfig);
     const sql = "select 1";
     const [rows] = await pool.query(sql);
@@ -20,7 +21,9 @@ const poolPromise = (async () => {
       console.log("DB connected!")
       return pool;
     }
-  } catch (err) {
+  } 
+  catch (err) 
+  {
     logger.error("Database Connection Failed! Bad Config: ", err);
     console.log("DB not connected!")
   }
