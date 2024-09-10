@@ -9,19 +9,20 @@ const env = args && args.length > 0 ? args[0] : 'development';
 let config; // Define config variable outside try-catch block
 
 try {
-    let dotenvPath
-    if (!env)
-        dotenvPath = path.resolve(__dirname, '.env'); // If environment is not 'development', use .env.<env>
-    else
-        dotenvPath = path.resolve(__dirname, `.env.${env}`);
+    // let dotenvPath
+    // if (!env)
+    //     dotenvPath = path.resolve(__dirname, '.env'); // If environment is not 'development', use .env.<env>
+    // else
+    //     dotenvPath = path.resolve(__dirname, `.env.${env}`);
 
     // Load environment variables from the specified .env file
-    const result = dotenv.config({ path: dotenvPath });
+    // const result = dotenv.config({ path: dotenvPath });
     // Check if loading .env file failed
-    if (result.error) {
-        throw result.error;
-    }
+    // if (result.error) {
+    //     throw result.error;
+    // }
     // Export environment variables
+    dotenv.config();
     config = {
         ENV: env,
         API_KEY: process.env.API_KEY,
