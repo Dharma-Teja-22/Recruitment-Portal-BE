@@ -36,7 +36,9 @@ try {
         TABLENAME4: process.env.TABLENAME4,
         TABLENAME5: process.env.TABLENAME5,
         SECRET_KEY: process.env.SECRET_KEY,
-        PORT : process.env.PORT
+        PORT : process.env.PORT,
+        EMAIL: process.env.EMAIL,
+        PASSKEY:process.env.PASSKEY
     };
     console.log(config)
 } catch (error) {
